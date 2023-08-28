@@ -1,4 +1,4 @@
-# # giải bài
+## giải bài
 # import xml.etree.ElementTree as ET
 
 # def word_cnt(s):
@@ -27,15 +27,3 @@
 
 # s = "hello world hello"
 # word_cnt(s)
-class Solution(object):
-    def isPerfectSquare(self, num):
-        """
-        :type num: int
-        :rtype: bool
-        """
-        if num ** (1/2) == num / (num**(0.5)):
-            return True
-        return False
-        
-a = Solution()
-print(a.isPerfectSquare(14))
