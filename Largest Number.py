@@ -9,7 +9,7 @@ class Solution(object):
         nums.sort()
         nums.reverse()
         nums = ''.join([str(char) for char in nums])
-        print(nums)
+        print(nums) 
         
 
 a = Solution()
