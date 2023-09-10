@@ -14,11 +14,26 @@ class Solution(object):
         print(nums) 
     def bigNums(self, nums):
         "a"
+        def swap(a, b):
+            return b, a
         new = []
         for i in range(len(nums)):
             digit = str(nums[i])
             save = nums[i] / (10**(len(digit)-1))
-            print(nums[i], save)
+            new.append(save)
+        print(new)
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if new[i] == new[j]:
+                    if nums[i] < nums[j]:
+                        swap(nums[i], nums[j])
+                elif new[i] > new[j]:
+                    swap(nums[i], nums[j])
+                print(nums)
+        print(nums)
+        nums.reverse()
+        # nums = ''.join([str(char) for char in nums])
+        print(nums)
     def test(self, nums):
         nums_str = [str(num) for num in nums]
 
@@ -38,6 +53,7 @@ class Solution(object):
 a = Solution()
 
 nums = [3,30,34,5,9]
+
 
 # a.largestNumber(nums)
 # a.bigNums(nums)
