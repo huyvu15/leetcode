@@ -49,17 +49,59 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        for i in range(len(nums)):
-            for j in range(len(nums)):
-                for k in range(len(nums)):
-                    if i != j and i != k and j != k:
-                        pass
+        nums.sort()
+        n = len(nums)
+        ans = []
+        for i in range(n - 2):
+            if i and nums[i] == nums[i-1]:
+                continue
+            j = i + 1
+            k = n - 1
+            while j < k:
+                a, b, c = nums[i], nums[j], nums[k]
+                x = a + b + c
+                if x == 0:
+                    ans.append([a, b, c])
+                    while j < k and nums[k] == nums[k - 1]: k -= 1
+                    while j < k and nums[j] == nums[j + 1]: j += 1
+                    j += 1
+                    k -= 1
+                elif x < 0:    
+                    j = j + 1
+                else:
+                    k -= 1
+        print(ans)
+                    
+class Solution2(object):
+    def THREESum(self, nums):
+        nums.sort()   
+        n = len(nums)
+        ans = []
         
+        for i in range(n - 2):
+            if i and nums[i] == nums[i-1]:
+                continue
+            j = i + 1
+            k = n - 1
+            while j < k:
+                a, b , c = nums[i] , nums[j] , nums[k]
+                x = a + b + c
+                if x == 0:
+                    ans.append([a, b, c])
+                    while j < k and nums[k] == nums[k - 1]: k -= 1
+                    while j < k and nums[j] == nums[j + 1]: j += 1
+                    j = j + 1
+                    k = k - 1
+                elif x < 0:
+                    j = j + 1
+                else: 
+                    k = k - 1   
+        print(ans)  
         
                            
-a = Solution()
+a = Solution2()
 
 nums = [-1,0,1,2,-1,-4]
-print("nums: ",nums)
-# a.threeSum(nums)
-print(a.threeSum(nums))
+print("nums = ",nums)
+a.THREESum(nums)
+# print(a.threeSum(nums))
