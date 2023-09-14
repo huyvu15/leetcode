@@ -123,10 +123,24 @@ class Solution1:
         self.quick_sort(left+1, end, nums)
 
 # Sử dụng
-solution = Solution()
-nums1 = [10, 2]
-nums2 = [3, 30, 34, 5, 9]
-print(solution.largestNumber(nums1))  # Output: "210"
-print(solution.largestNumber(nums2))  # Output: "9534330"
+# solution = Solution()
+# nums1 = [10, 2]
+# nums2 = [3, 30, 34, 5, 9]
+# print(solution.largestNumber(nums1))  # Output: "210"
+# print(solution.largestNumber(nums2))  # Output: "9534330"
 
 
+# nếu như này nó sẽ trả ra 1 tuple
+def func(*args):
+    print(type(args))
+    print(args)
+    
+    
+func(1, 2, 3, 4)
+
+def func(**kargs):
+    print(type(kargs))
+    print(kargs)
+    
+    
+func(i = 1, a = 2)
