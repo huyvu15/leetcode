@@ -40,7 +40,7 @@ class Solution1(object):
     def rotateRight(self, head, k):
         """
         :type head: ListNode
-        :type k: int
+        :type k: int    
         :rtype: ListNode
         """
         # Handle special cases

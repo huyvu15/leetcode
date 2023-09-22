@@ -138,9 +138,11 @@ def func(*args):
     
 func(1, 2, 3, 4)
 
+# như này lại trả ra 1 dict
 def func(**kargs):
     print(type(kargs))
     print(kargs)
     
     
 func(i = 1, a = 2)
+
