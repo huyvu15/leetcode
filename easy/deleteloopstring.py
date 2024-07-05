@@ -1,6 +1,10 @@
 a = "aaAbcBC"
 
+b = set()
 
-b = set(a.lower())
 
-print(b)
+for char in a:
+    if char.lower() in a and char.upper() in a:
+        b.add(char.lower())
+
+print(len(b))
